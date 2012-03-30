@@ -1,0 +1,70 @@
+	<div id="shiyi",margin: 0 auto>
+
+		<div>
+			 <% if notice %> 
+				<p id = "notice"><%= notice %></p> 
+			 <% end %> 
+
+
+				<h1>拾遗</h1>
+				<h3 ><font color="gray">潜下心来，回首过往，触碰灵魂，追寻心的方向...</font></h3>
+
+		</div>
+
+		<div class ="items">
+					<% @items.in_groups_of(3, false) do |group|  %>
+					<div class="col">
+					
+						
+						<% group.each do |item| %>
+						<%if item.milestonetag == 1 %>
+							<div class = "list_des_milestone">
+						<% elsif item.Item_time < Time.now %>
+							<div class="list_des">
+						<% else %>
+							<div class="list_des_plans">
+						<%end%>
+						
+							
+							<%= image_tag item.Itemimg.url(:xsmall)   %>
+							<dl>
+								<dt><%= item.Item_time.strftime('%Y-%m-%d') %> @<%= item.location %></dt>
+
+								<div id="des"><%= truncate(strip_tags(item.des),:length => 260) %></div>
+								<%= item.created_at.strftime('%Y-%m-%d %H:%M') %><br/>
+							</dl>
+							
+							<% if item.plantag == 1 %>
+								<div id="item_plan">
+									<div class="planstatu">
+										<%= item.planstatu %><br/>  
+									</div>
+									<div class="plandes">
+										<%= truncate(strip_tags(item.plandes),:length => 40) %>
+									</div>
+								</div>
+							<% end %>
+							<% if item.milestonetag ==1 %>
+								<div id="item_milestone">
+									一个里程碑
+								</div>
+							<%end%>
+							
+						</div>
+						<% end %>
+						
+					
+					</div>
+					<% end %>
+		</div>
+
+			<div >
+			            <%= will_paginate @items,  
+			              :inner_window => 1,  
+			              :outer_window => 1,  
+			              :previous_label => '上一页',  
+			              :next_label => '下一页'  
+			            %> 
+			</div>
+
+	</div>

@@ -1,0 +1,59 @@
+
+<div id="item_list">
+  <%= form_for @item ,:html => { :multipart => true }  do |f| %>
+    <% if @item.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+        <ul>
+        <% @item.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+
+    <div class="field">
+      <font color=red>*</font>
+      <%= f.label :那时 %><br />   
+      <%= date_select(:item, :Item_time,:default => Time.now,:start_year => -1000,:end_year => (Time.now.year + 70),:use_month_numbers => true) %> 
+    </div>
+    <div class="field">
+      <font color=red>*</font>
+      <%= f.label :那个地方 %><br />
+      <%= f.text_field :location.to_s.force_encoding("UTF-8") %>
+    </div>
+    <div class="field">
+      <font color=red>*</font>
+      <%= f.label :经历 %><br />
+      <%= f.text_area :des.to_s.force_encoding("UTF-8"),:rows => 10 %>
+    </div>
+    <div class="field">
+      <font color=red>*</font>
+      <%= f.label :那张图片  %><br />
+       <%= f.file_field :Itemimg %>
+    </div>
+    <div id="plan_bord">
+      <div class="field">
+        <%= check_box( "item","plantag" ) %>
+        <%= f.label :我的一个计划 %>
+       <!-- <%= f.select :planstatu.to_s.force_encoding("UTF-8"), Item::PLAN_STATUS %> -->
+      </div>
+        <div class="field">
+        <%= f.label :计划情况描述 %><br />
+        <%= f.text_area :plandes.to_s.force_encoding("UTF-8"),:rows =>3 %>
+      </div>
+        <div class="field">
+        <%= check_box( "item","milestonetag" ) %>
+        <%= f.label :我的一个里程碑 %> (人生、事件中重要的转折点)<br />
+        
+      </div>
+    </div>
+    <div class="actions",style='float:right'>
+        <%= submit_tag '保存' %>
+    </div>
+
+
+  <% end %>
+</div>

@@ -1,0 +1,258 @@
+/* Global styles */
+
+#shiyi #notice {
+        color: #000;
+        border: 2px solid red;
+        padding: 1em;
+        margin-bottom: 2em;
+        background-color: #f0f0f0;
+        font: bold smaller sans-serif;
+}
+#shiyi table {
+
+}
+
+#shiyi table tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+#shiyi div tr td {
+        padding: 5px;
+        vertical-align: top;
+}
+#shiyi .head{
+
+}
+#shiyi .list_image {
+  width:        26%;
+
+}
+
+#shiyi .list_des {
+    /*width:260px; */
+
+    border:5px solid #E8E8D0;
+    padding: 5px;
+    margin: 10px;
+
+    float:left;
+    width:210px;
+    position:relative;
+ 
+    overflow:hidden;
+
+}
+#shiyi .list_des_plans {
+    /*width:260px; */
+    /* FFFF6F D1E9E9 */
+    border:5px solid #CCFF80;
+    padding: 5px;
+    margin: 10px;
+
+    float:left;
+    width:210px;
+    position:relative;
+ 
+    overflow:hidden;
+
+}
+#shiyi .list_des_plans dl {
+        margin: 0;
+}
+
+#shiyi .list_des_plans dt {
+  color:        #009100;
+  font-weight:  bold;
+  font-size:    medium;
+ /*text-align:   left */
+}
+#shiyi .list_des_milestone {
+    /*width:260px; */
+    /* FFFF6F D1E9E9 E2C2DE ff7575 FFD2D2 */
+    border:5px solid #FFBD9D;
+    padding: 5px;
+    margin: 10px;
+
+    float:left;
+    width:210px;
+    position:relative;
+ 
+    overflow:hidden;
+
+}
+#shiyi .list_des_milestone dl {
+        margin: 0;
+}
+
+#shiyi .list_des_milestone dt {
+  color:        #009100;
+  font-weight:  bold;
+  font-size:    medium;
+ /*text-align:   left */
+}
+#shiyi .list_des dl {
+        margin: 0;
+}
+
+#shiyi .list_des dt {
+  color:        #009100;
+  font-weight:  bold;
+  font-size:    medium;
+ /*text-align:   left */
+}
+
+/* Shiyi Items */
+
+
+#shiyi .items {
+  width:800px;
+  font-size: 100%;
+  font: inherit;
+  margin: 0 auto;
+}
+
+#shiyi .col{
+
+  width:240px; /*设定宽度*/
+   /*text-align:left;文字左对齐*/
+  float:left; /*浮动居左*/
+  /*clear:left; 不允许左侧存在浮动*/
+  overflow:hidden; /*超出宽度部分隐藏*/
+
+  /*border:1px solid #E00; */
+ margin: 5px;
+}
+
+/* Styles for items/index */
+
+
+#item_list {
+
+        margin: 0 auto;
+
+        border-collapse: collapse;
+         /* width:        85%; */
+
+         width:512px; //宽度可自行设定，设定成1024则一般的宽屏和标屏显示都正确
+
+}
+
+#item_list table {
+
+        margin: 0 auto;
+
+        border-collapse: collapse;
+         /* width:        85%; */
+
+         width:512px; //宽度可自行设定，设定成1024则一般的宽屏和标屏显示都正确
+
+        height:768px; //
+
+        /* background-image:url(img_frame/3.png); //3.png为需要填充的一段图片，一般横向填充 */
+
+        background-repeat:repeat-x;//repeat-x代表横向填充。
+
+}
+
+#item_list table tr td {
+        padding: 3px;
+        vertical-align: top;
+}
+
+#item_list .list_image {
+  width:        60px;
+  height:       70px;
+}
+
+#plan_bord{
+    border-width: 1px;
+    border-style: dashed;
+    border-color: #79FF79;
+    padding: 3px;
+}
+
+#item_list .list_des {
+  width:        75%;
+
+  padding: 5px;
+}
+#item_list .list_bord {
+    border:5px solid #E8E8D0;
+    
+
+}
+#item_list .list_des dl {
+        margin: 0;
+}
+
+#item_list .list_des dt {
+	color:        #009100;
+	font-weight:  bold;
+	font-size:    medium;
+  text-align:   left
+}
+
+
+#item_list .list_des dd {
+  margin: 0;
+  font-size:    medium;
+  text-align:   left;
+}
+
+#item_list .list_actions {
+  width:        10%;
+  font-size:    small;
+  text-align:   right;
+  vertical-align:bottom;
+
+}
+
+#item_list .list_line_even {
+  background:   #FFFAF4;
+}
+
+#item_list .list_line_odd {
+  background:   #DEFFAC;
+}
+/*DEFFAC*/
+/*
+#item_list .list_line_odd {
+  background:   #E8E8D0;
+}
+/*
+/* An entry in the shiyi catalog */
+
+#item_plan {
+  background:   #DEFFAC;
+    padding: 5px;
+}
+#item_plan .planstatu{
+  color:        #977C00;
+  font-weight:  bold;
+  font-size:    medium;
+  text-align:   right
+}
+#item_plan .plandes{
+  text-indent: 2em;
+  text-align:   left;
+  color:        #977C00;
+
+}
+#item_milestone {
+  background:   #FFDAC8;
+  text-align:   right;
+  font-size:    medium;
+  font-weight:  bold;
+  padding: 5px;
+}
+
+#des {
+  text-indent: 2em;
+}
+
+#Footer {
+  width:800px;
+  margin:0 auto;
+  height:50px;
+  background:#00FFFF;
+}

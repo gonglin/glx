@@ -1,0 +1,49 @@
+<div id="item_list">
+    
+
+    <table>
+        <td>
+            <h1 >我拾起的</h1>
+        </td>
+        <% @items.each do |item| %>
+          <tr class="list_bord">
+
+            <td ><%= image_tag item.Itemimg.url(:small) %></td>
+                <td class="list_des">
+                    <dl>
+                        <br/>
+                        <dt><%= item.Item_time.strftime('%Y-%m-%d') %> @<%= item.location %></dt>
+                        <br/>
+                        <dd><%= truncate(strip_tags(item.des),:length => 80) %></dd>
+                        <!-- <dd><%= item.created_at.strftime('%Y-%m-%d %H:%M') %></dd> -->
+                        <%= item.planstatu %><br/>
+                        <%= item.user %>
+                        <%= item.created_at.strftime('%Y-%m-%d %H:%M') %>
+                    </dl>
+                </td>
+
+            <td class="list_actions">
+                <%= link_to '瞅瞅', item %><br/>
+                <%= link_to '涂改', edit_item_path(item) %><br/>
+                <%= link_to '丢掉', item, :confirm => '真的要丢掉吗?', :method => :delete %>
+            </td>
+          </tr>
+        <% end %>
+        <td>
+            <h2><%= link_to '拾遗', new_item_path %></h2>
+        </td>
+        <br/>
+        <td>
+            <%= will_paginate @items,  
+              :inner_window => 1,  
+              :outer_window => 1,  
+              :previous_label => '上一页',  
+              :next_label => '下一页'  
+            %>
+        </td>
+    </table>
+</div>
+
+<br />
+
+

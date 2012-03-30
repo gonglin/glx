@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<p>
+  <%= image_tag @item.Itemimg.url %>
+  <%= image_tag @item.Itemimg.url(:small) %>
+  <%= image_tag @item.Itemimg.url(:xsmall) %>
+</p>
+<p>
+  <b>那时</b>
+  <%= @item.Item_time.strftime('%Y-%m-%d') %>
+</p>
+<p>
+  <b>那个地方:</b>
+  <%= @item.location %>
+</p>
+
+<p>
+  <b>经历:</b>
+  <%= @item.des %>
+</p>
+
+<p>
+  <b>拾于:</b>
+  <%= @item.created_at.strftime('%Y-%m-%d %H:%M') %>
+</p>
+
+<%= link_to '涂改', edit_item_path(@item) %> |
+<%= link_to '回去', items_path %>

@@ -1,0 +1,40 @@
+
+<h2>更新个人信息</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div><%= f.label :新密码 %> <i>(如果不需要修改密码则不用填写)</i><br />
+  <%= f.password_field :password %></div>
+<br />
+  <div><%= f.label :重复新密码 %><br />
+  <%= f.password_field :password_confirmation %></div>
+<br />
+  <div>
+    <font color=red>*</font>
+    <%= f.label :当前密码 %> <i>(我们需要你的当前密码来确认你的更新)</i>
+    <br />
+    <%= f.password_field :current_password %>
+  </div>
+<br />
+  <div><%= f.label :昵称 %> <br />
+  <%= f.text_field :pet_name %></div>
+<br />
+  <div><%= f.label :签名 %><br />
+  <%= f.text_field :des %></div>
+<br />
+  <div><%= f.label :性别 %>
+  <%= f.select :sex, User::SEX_STATUS %></div>
+
+  <br />
+
+  <div>
+        <%= f.label :头像  %>
+       <%= f.file_field :img %>
+  </div>
+
+  <div><%= f.submit "Update" %></div>
+<% end %>
+
+<%= render :partial => "devise/shared/links" %>
+<%= link_to "Back", :back %>
